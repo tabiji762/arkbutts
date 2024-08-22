@@ -1,0 +1,210 @@
+.modules-container{
+     display: grid;
+     grid-template-rows: auto;
+     grid-template-columns: max-content auto;
+     gap: 1rem;
+}
+
+/* selector stuff*/
+.modules-container .selector-container{
+     display: flex;
+     gap: 1rem;
+     flex-direction: column;
+     align-items: center;
+}
+.modules-container .selector-container h2{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 50px;
+     aspect-ratio: 1;
+     border: 1px solid var(--bordercolor);
+     border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.2s ease;
+}
+.modules-container .selector-container h2:hover{
+     background-color: var(--hoverbg)
+}
+
+.modules-container .modules-content{
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+     width: 100%;
+}
+
+/* modules head stuff */
+.modules-container .modules-content .head{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 0 1rem;
+     gap: 1rem;
+}
+.modules-head-1{
+     display: flex;
+     align-items: center;
+     gap: 1rem;
+}
+.modules-head-1 #module-img{
+     width: 150px;
+     aspect-ratio: 1;
+     border: 1px solid var(--bordercolor);
+     border-radius: 5px;
+     display: block;
+}
+.module-head-text{
+     display: flex;
+     flex-direction: column;
+     gap: 0.5rem;
+}
+.module-head-text div{
+     display: flex;
+     flex-direction: row;
+     gap: 0.5rem;
+     align-items: center;
+     border: 1px solid var(--bordercolor);
+     border-radius: 5px;
+     padding: 0 0.5rem;
+     width: max-content;
+}
+.module-head-text div p{
+     color: var(--subtextcolor);
+     padding: 0.5rem 0;
+}
+.module-head-text div span{
+     width: 30px;
+     aspect-ratio: 1;
+     background-position: center;
+     background-size: contain;
+     background-repeat: no-repeat;
+     display: block;
+     fill: var(--svgcolor);
+}
+
+.module-level-selector-container{
+     display: flex;
+     gap: 1rem;
+}
+.module-level-selector-container span{
+     display: block;
+     width: 50px;
+     aspect-ratio: 1;
+     background-position: center;
+     background-size: 80%;
+     background-repeat: no-repeat;
+     border: 1px solid var(--bordercolor);
+     border-radius: 5px;
+     transition: background-color 0.2s ease;
+     cursor: pointer;
+}
+.module-level-selector-container span:hover{
+     background-color: var(--hoverbg);
+}
+
+/* module stats stuff */
+.module-stats-container{
+     display: flex;
+     gap: 1rem;
+     flex-wrap: wrap;
+     align-items: center;
+     padding: 0 1rem;
+     contain: content;
+}
+.module-stats-container li{
+     align-items: center;
+     gap: 0.5rem;
+     padding-left: 0.5rem;
+     border: 1px solid var(--bordercolor);
+     border-radius: 5px;
+}
+.module-stats-container li p:nth-child(1){
+     min-width: 40px;
+     text-align: center;
+}
+.module-stats-container li .stat-number{
+     padding: 0.5rem 0;
+     min-width: 50px;
+     text-align: center;
+     border-radius: 5px;
+     background-color: var(--hoverbg);
+}
+
+
+/* module traits stuff */
+.module-trait-container{
+     display: grid;
+     grid-template-rows: auto;
+     grid-template-columns: auto max-content;
+     gap: 1rem;
+     padding: 0 1rem;
+}
+.module-trait-container div:nth-child(1){
+     display: flex;
+     flex-direction: column;
+     gap: 0.5rem;
+}
+.module-trait-container div:nth-child(1) p{
+     color: var(--subtextcolor);
+}
+.module-trait-container div:nth-child(2){
+     flex-direction: column;
+     display: flex;
+     gap: 1rem;
+}
+.module-trait-container table{
+     width: max-content;
+     table-layout: fixed;
+     border-spacing: 3px;
+}
+.module-trait-container table td{
+     width: 25px;
+     height: 25px;
+     border: 2px solid var(--bordercolor);
+}
+.module-trait-container table .center-tile{
+     border-color: var(--accentcolor);
+     background-color: var(--accentcolor);
+     opacity: 0.7;
+}
+.module-trait-container table .hide-tile{
+     border-color: transparent;
+}
+
+
+
+/* module talent stuff */
+.module-talent-container{
+     display: flex;
+     flex-direction: column;
+     gap: 0.5rem;
+     padding: 0 1rem;
+}
+.module-talent-container p{
+     color: var(--subtextcolor)
+}
+
+@media (max-width: 1200px) {
+     .modules-container .selector-container{
+          flex-direction: row;
+          padding: 0 1rem;
+     }
+     .modules-container{
+          grid-template-rows: max-content auto;
+          grid-template-columns: auto;
+     }
+
+     .modules-container .modules-content .head{
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+     }
+
+     .module-trait-container{
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          padding: 0 1rem;
+     }
+}

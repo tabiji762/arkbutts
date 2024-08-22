@@ -1,0 +1,88 @@
+.filter-container{
+     display: grid;
+     grid-template-rows: auto auto auto auto auto auto auto auto auto;
+     grid-template-columns: min-content auto;
+     gap: 2rem 1rem;
+     padding: 0 1rem;
+     user-select: none;
+}
+.cards-container{
+     padding: 0 1rem;
+}
+.operator-container hr{
+     border: 0;
+     height: 1px;
+     background-color: var(--bordercolor);
+}
+
+/* filter containing star and limited */
+.filter-container .extra-filter-container{
+     grid-area: 1/1/2/3;
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+     flex-wrap: wrap;
+     gap: 0.5rem;
+}
+.filter-container .extra-filter-container li{
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+     align-items: center;
+     padding: 0.5rem;
+     border: 1px solid var(--bordercolor);
+     border-radius: 5px;
+}
+.filter-container .extra-filter-container svg{
+     width: 20px;
+     aspect-ratio: 1;
+     fill: var(--starcolor);
+}
+
+/* subclass filter */
+.filter-container h2 {
+     display: flex;
+     justify-content: flex-start;
+     height: max-content;
+     padding: 0.5rem;
+     border: 1px solid var(--bordercolor);
+     border-radius: 5px;
+}
+
+.filter-container .subclass-container{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: flex-start;
+     gap: 0.5rem;
+}
+.filter-container .subclass-container li{
+     display: flex;
+     padding: 0.2rem;
+     padding-right: 0.5rem;
+     gap: 0.5rem;
+     align-items: center;
+     border: 1px solid var(--bordercolor);
+     border-radius: 5px;
+}
+.filter-container .subclass-container li span{
+     width: 30px;
+     aspect-ratio: 1;
+     background-size: contain;
+     background-repeat: no-repeat;
+     background-position: center;
+     border-radius: 5px;
+}
+
+/* hover stuff */
+.filter-container h2:hover, .filter-container .subclass-container li:hover, .filter-container .extra-filter-container li:hover{
+     background-color: var(--hoverbg);
+     cursor: pointer
+}
+.filter-container h2, .filter-container .subclass-container li, .filter-container .extra-filter-container li{
+     transition: background-color 0.2s ease;
+}
+
+.active-filter, .active-filter:hover{
+     background-color: var(--accentbg) !important;
+     border-color: var(--accentcolor) !important;
+}

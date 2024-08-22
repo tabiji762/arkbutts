@@ -1,0 +1,180 @@
+.summon-container{
+     display: grid;
+     grid-template-rows: auto auto auto;
+     grid-template-columns: 100%;
+     gap: 1rem;
+}
+
+/* head container stuff*/
+.summon-head{
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap-reverse;
+     justify-content: space-between;
+     align-items: center;
+     padding: 0 1rem;
+     gap: 1rem;
+}
+.summon-head .info-container{
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+     align-items: center;
+     gap: 1rem;
+}
+.summon-head .info-container img{
+     width: 150px;
+     aspect-ratio: 1;
+     padding: 5px;
+     border: 1px solid var(--bordercolor);
+     border-radius: 5px;
+     display: block;
+}
+.summon-head .info-container ul{
+     display: flex;
+     flex-direction: column;
+     gap: 0.5rem;
+}
+.summon-head .info-container ul li:nth-child(2){
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     gap: 1rem;
+}
+.summon-head .info-container ul li:nth-child(2) p{
+     padding: 0.5rem;
+     border: 1px solid var(--bordercolor);
+     border-radius: 5px;
+}
+
+.summon-head .button-container{
+     display: flex;
+     gap: 1rem;
+}
+.summon-head .button-container li{
+     transition: background-color 0.2s ease;
+     cursor: pointer;
+     width: 50px;
+     height: 50px;
+     border: 1px solid var(--bordercolor);
+     border-radius: 5px;
+}
+.summon-head .button-container svg{
+     fill: var(--svgcolor);
+     width: 100%;
+     height: 100%;
+}
+
+.summon-head .button-container li:hover{
+     background-color: var(--hoverbg);
+}
+
+/* range input container stuff */
+.summon-range-container{
+     display: flex;
+     align-items: center;
+     flex-direction: row;
+     padding: 0 1rem;
+     gap: 1rem;
+}
+.summon-range-container div{
+     display: flex;
+     flex-direction: row;
+     gap: 1rem;
+}
+.summon-range-container .range-display{
+     width: 50px;
+     border: 1px solid var(--bordercolor);
+     border-radius: 5px;
+     text-align: center;
+}
+
+.summon-range-container input {
+     appearance: none;
+     width: 100%;
+     cursor: pointer;
+     height: 1rem;
+     border-radius: 5px;
+     background-color: var(--hoverbg);
+     border: 1px solid var(--bordercolor);
+}
+
+.summon-range-container input::-webkit-slider-thumb {
+     -webkit-appearance: none;
+     width: 20px;
+     height: 20px;
+     background-color: var(--accentbg);
+     cursor: pointer;
+     border: 2px solid var(--accentcolor);
+     border-radius: 20%;
+}
+
+.summon-range-container input::-moz-range-thumb {
+     width: 20px;
+     height: 20px;
+     background-color: var(--accentbg);
+     cursor: pointer;
+     border: 2px solid var(--accentcolor);
+     border-radius: 20%;
+}
+
+.summon-range-container input::-ms-thumb {
+     appearance: none;
+     width: 20px;
+     height: 20px;
+     background-color: var(--accentbg);
+     cursor: pointer;
+     border: 2px solid var(--accentcolor);
+     border-radius: 20%;
+}
+
+
+
+
+/* stat container stuff */
+.summon-stats-container{
+     display: grid;
+     grid-template-rows: auto auto;
+     grid-template-columns: 20% 20% 20% 20% 20%;
+     padding: 0 1rem;
+     gap: 1rem 0;
+}
+.summon-stats-container .range-stat-container{
+     grid-area: 1/1/3/2;
+}
+.summon-stats-container div{
+     display: flex;
+     flex-direction: column;
+     gap: 0.5rem;
+}
+
+.summon-stats-container .range-stat-container table{
+     width: max-content;
+     table-layout: fixed;
+     margin: 1rem 0;
+     border-spacing: 3px;
+}
+.summon-stats-container .range-stat-container table td{
+     width: 25px;
+     height: 25px;
+     border: 2px solid var(--bordercolor);
+}
+.summon-stats-container .range-stat-container table .center-tile{
+     border-color: var(--accentcolor);
+     background-color: var(--accentcolor);
+     opacity: 0.7;
+}
+.summon-stats-container .range-stat-container table .hide-tile{
+     border-color: transparent;
+}
+
+
+@media (max-width:1200px){
+     .summon-stats-container{
+          grid-template-rows: auto auto auto auto auto;
+          grid-template-columns: auto auto;
+     }
+     .summon-stats-container .range-stat-container{
+          grid-area: 1/1/2/3;
+     }
+}
