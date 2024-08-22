@@ -10,7 +10,7 @@ function Cards(props){
           backgroundImage: 'url('+props.subclassImage+')',
      }
      return(
-          <a href={props.link} className='cardsContainer' style={characterPortrait}>
+          <Link to={props.link} className='cardsContainer' style={characterPortrait}>
                <span className="subclass-image-container" style={subclassImage}></span>
                <div className='cardsContent'>
                     <h2>{props.name}</h2>
@@ -22,7 +22,7 @@ function Cards(props){
                          </div>
                     </div>
                </div>
-          </a>
+          </Link>
      )
 }
 

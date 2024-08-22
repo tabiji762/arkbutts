@@ -136,7 +136,7 @@ export default function OperatorNav(props) {
                               </div>
                          </div>
                          <div className="tabsContainer">
-                              <a href='/arkbutts/'><p>BACK</p></a>
+                              <Link to='/arkbutts/'><p>BACK</p></Link>
                               <p onClick={() => sendTab('overview')} id="overviewTab" style={{display: props.showTabs[0]}}>Overview</p>
                               <p onClick={() => sendTab('skills')} id="skillsTab" style={{display: props.showTabs[1]}}>Skills</p>
                               <p onClick={() => sendTab('modules')} id="modulesTab" style={{display: props.showTabs[2]}}>Modules</p>
