@@ -4,6 +4,7 @@ import Home from './home/home.jsx'
 import Kaltsit from './operators/kaltsit.jsx'
 import Amiya from './operators/amiya.jsx'
 import Mlynar from './operators/mlynar.jsx'
+import AmiyaGuard from './operators/amiyaguard.jsx'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path='/arkbutts/' element={<Home />}></Route>
         <Route path='/arkbutts/kaltsit' element={<Kaltsit />}></Route>
         <Route path='/arkbutts/amiya' element={<Amiya />}></Route>
+        <Route path='/arkbutts/amiya_guard' element={<Amiya />}></Route>
         <Route path='/arkbutts/mlynar' element={<Mlynar />}></Route>
       </Routes>
     </BrowserRouter>
