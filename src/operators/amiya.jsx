@@ -904,7 +904,7 @@ function Manifest() {
 
                     eliteVisibility={['flex', 'flex']}
                     eliteResources={[
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/GOLD.png')"
@@ -926,7 +926,7 @@ function Manifest() {
                                    itemAmount='x4'
                                    itemDesc='Oriron' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/GOLD.png')"
@@ -966,14 +966,14 @@ function Manifest() {
                     ]}
 
                     skillResources={[
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-2-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL1.png')"
                                    itemAmount='x4'
                                    itemDesc='Skill Summary 1' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-2-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL1.png')"
@@ -985,7 +985,7 @@ function Manifest() {
                                    itemAmount='x4'
                                    itemDesc='Damaged Device' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-3-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL2.png')"
@@ -997,7 +997,7 @@ function Manifest() {
                                    itemAmount='x4'
                                    itemDesc='Orirock Cube' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-3-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL2.png')"
@@ -1009,7 +1009,7 @@ function Manifest() {
                                    itemAmount='x5'
                                    itemDesc='Sugar' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-3-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL2.png')"
@@ -1021,7 +1021,7 @@ function Manifest() {
                                    itemAmount='x4'
                                    itemDesc='Aketon' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL3.png')"
@@ -1049,7 +1049,7 @@ function Manifest() {
                     ]}
 
                     skill1SpecResources={[
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL3.png')"
@@ -1066,7 +1066,7 @@ function Manifest() {
                                    itemAmount='x5'
                                    itemDesc='Aketon' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL3.png')"
@@ -1083,7 +1083,7 @@ function Manifest() {
                                    itemAmount='x6'
                                    itemDesc='White Horse Kohl' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL3.png')"
@@ -1103,7 +1103,7 @@ function Manifest() {
                     ]}
 
                     skill2SpecResources={[
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL3.png')"
@@ -1120,7 +1120,7 @@ function Manifest() {
                                    itemAmount='x2'
                                    itemDesc='Integrated Device' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL3.png')"
@@ -1137,7 +1137,7 @@ function Manifest() {
                                    itemAmount='x5'
                                    itemDesc='Manganese Trihydrate' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL3.png')"
@@ -1157,7 +1157,7 @@ function Manifest() {
                     ]}
 
                     skill3SpecResources={[
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL3.png')"
@@ -1174,7 +1174,7 @@ function Manifest() {
                                    itemAmount='x4'
                                    itemDesc='Loxic Kohl' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL3.png')"
@@ -1191,7 +1191,7 @@ function Manifest() {
                                    itemAmount='x6'
                                    itemDesc='Grindstone Pentahydrate' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL3.png')"
@@ -1255,7 +1255,7 @@ function Manifest() {
                          'Raise Amiya\'s trust to 100'
                     ]}
                     module1Resources={[
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-5-bg.png')"
                                    itemUrl="url('icons/mod_update_token_3.png')"
@@ -1277,7 +1277,7 @@ function Manifest() {
                                    itemAmount=''
                                    itemDesc='' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-5-bg.png')"
                                    itemUrl="url('icons/mod_update_token_3.png')"
@@ -1299,7 +1299,7 @@ function Manifest() {
                                    itemAmount='x50,000'
                                    itemDesc='LMD' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-5-bg.png')"
                                    itemUrl="url('icons/mod_update_token_3.png')"
@@ -1336,11 +1336,11 @@ function Manifest() {
                     ]}
 
                     module2Resources={[
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>
                     ]}
 
@@ -1358,11 +1358,11 @@ function Manifest() {
                     ]}
 
                     module3Resources={[
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>
                     ]}
 
@@ -1380,11 +1380,11 @@ function Manifest() {
                     ]}
 
                     module4Resources={[
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>
                     ]}
 
@@ -1401,11 +1401,11 @@ function Manifest() {
                     ]}
 
                     module5Resources={[
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>
                     ]}
                />
