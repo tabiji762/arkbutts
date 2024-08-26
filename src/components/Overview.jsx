@@ -31,9 +31,15 @@ function overview(props) {
 
      const [currentElite, setCurrentElite] = useState(0);
 
+     const [displayTalentWrapper, setDisplayTalentWrapper] = useState(props.talentWrapperVisibility[0]);
+     const [talent1Visibility, setTalent1Visibility] = useState(props.talent1Visibility[0]);
+     const [talent2Visibility, setTalent2Visibility] = useState(props.talent2Visibility[0]);
      const [displayTalent1, setDisplayTalent1] = useState(props.talent1Text[0]);
      const [displayTalent2, setDisplayTalent2] = useState(props.talent2Text[0]);
 
+     const [displayBskillWrapper, setDisplayBskillWrapper] = useState(props.bskillWrapperVisibility[0]);
+     const [bskill1Visibility, setBskill1Visibility] = useState(props.bskill1Visibility[0]);
+     const [bskill2Visibility, setBskill2Visibility] = useState(props.bskill2Visibility[0]);
      const [displayBskill1, setDisplayBskill1] = useState(props.bskill1Text[0]);
      const [displayBskill2, setDisplayBskill2] = useState(props.bskill2Text[0]);
 
@@ -122,199 +128,194 @@ function overview(props) {
           setRangeValue(1);
           setDisplayRange(props.opRanges[elite]);
           setMaxRangeValue(props.maxRangeValues[elite]);
+
           setDisplayBskill1(props.bskill1Text[elite]);
           setDisplayBskill2(props.bskill2Text[elite]);
-     }
+          setBskill1Visibility(props.bskill1Visibility[elite]);
+          setBskill2Visibility(props.bskill2Visibility[elite]);
+          setDisplayBskillWrapper(props.bskillWrapperVisibility[elite]);
 
-     const talent1Visibility = {
-          display: props.talent1Visibility[currentElite]
-     }
-     const talent2Visibility = {
-          display: props.talent2Visibility[currentElite]
-     }
-     const bskill1Visibility = {
-          display: props.bskill1Visibility[currentElite]
-     }
-     const bskill2Visibility = {
-          display: props.bskill2Visibility[currentElite]
-     }
+          setDisplayTalentWrapper(props.talentWrapperVisibility[elite]);
+          setTalent1Visibility(props.talent1Visibility[elite]);
+          setTalent2Visibility(props.talent2Visibility[elite]);
+}
 
-     useEffect(() => {
-          setDisplayHp(currentHpRange[0]);
-          setDisplayDef(currentDefRange[0]);
-          setDisplayAtk(currentAtkRange[0]);
-     }, [currentHpRange, currentDefRange, currentAtkRange]);
+useEffect(() => {
+     setDisplayHp(currentHpRange[0]);
+     setDisplayDef(currentDefRange[0]);
+     setDisplayAtk(currentAtkRange[0]);
+}, [currentHpRange, currentDefRange, currentAtkRange]);
 
-     useEffect(() => {
-          document.getElementById('elite0Button').classList.add('active-button')
-     }, []);
+useEffect(() => {
+     document.getElementById('elite0Button').classList.add('active-button')
+}, []);
 
 
-     return (
-          <div style={{ display: props.display }} className="overview-container">
-               <div className="overview-head">
-                    <div className="overview-head-1">
-                         <div className="overview-head-image">
-                              <img src={props.overviewInfo[0]} />
-                              <div className="overview-head-stars">
-                                   <div style={{ display: props.showStars[0] }}>
-                                        <Starsvg />
-                                   </div>
-                                   <div style={{ display: props.showStars[1] }}>
-                                        <Starsvg />
-                                   </div>
-                                   <div style={{ display: props.showStars[2] }}>
-                                        <Starsvg />
-                                   </div>
-                                   <div style={{ display: props.showStars[3] }}>
-                                        <Starsvg />
-                                   </div>
-                                   <div style={{ display: props.showStars[4] }}>
-                                        <Starsvg />
-                                   </div>
-                                   <div style={{ display: props.showStars[5] }}>
-                                        <Starsvg />
-                                   </div>
+return (
+     <div style={{ display: props.display }} className="overview-container">
+          <div className="overview-head">
+               <div className="overview-head-1">
+                    <div className="overview-head-image">
+                         <img src={props.overviewInfo[0]} />
+                         <div className="overview-head-stars">
+                              <div style={{ display: props.showStars[0] }}>
+                                   <Starsvg />
+                              </div>
+                              <div style={{ display: props.showStars[1] }}>
+                                   <Starsvg />
+                              </div>
+                              <div style={{ display: props.showStars[2] }}>
+                                   <Starsvg />
+                              </div>
+                              <div style={{ display: props.showStars[3] }}>
+                                   <Starsvg />
+                              </div>
+                              <div style={{ display: props.showStars[4] }}>
+                                   <Starsvg />
+                              </div>
+                              <div style={{ display: props.showStars[5] }}>
+                                   <Starsvg />
                               </div>
                          </div>
-                         <ul>
-                              <li><h1>{props.overviewInfo[1]}</h1></li>
-                              <li><p style={{ color: 'var(--subtextcolor)' }}>{props.overviewInfo[2]}</p></li>
-                         </ul>
                     </div>
-                    <ul className="overview-head-2">
-                         <li>{props.overviewInfo[3]}</li>
-                         <li>{props.overviewInfo[4]}</li>
-                    </ul>
-               </div>
-               <hr />
-
-               <div className="overview-buttons">
-                    <div className="overview-buttons-wrapper">
-                         <div id="elite0Button" className="overview-elite-button" onClick={() => elitePicker(0)}>
-                              <Elite0svg />
-                         </div>
-                         <div id="elite1Button" className="overview-elite-button" onClick={() => elitePicker(1)} style={{ display: props.showElites[0] }}>
-                              <Elite1svg />
-                         </div>
-                         <div id="elite2Button" className="overview-elite-button" onClick={() => elitePicker(2)} style={{ display: props.showElites[1] }}>
-                              <Elite2svg />
-                         </div>
-                    </div>
-                    <div className="overview-buttons-wrapper">
-                         <div className="overview-pottrust-wrapper">
-                              <p id="potentialButton" onClick={() => togglePotential()} className='overview-pottrust-button'>Potentials</p>
-                              <ul className="overview-pottrust-stats">
-                                   <li>{props.potentialInfo[0]}</li>
-                                   <li>{props.potentialInfo[1]}</li>
-                                   <li>{props.potentialInfo[2]}</li>
-                                   <li>{props.potentialInfo[3]}</li>
-                                   <li>{props.potentialInfo[4]}</li>
-                              </ul>
-                         </div>
-                         <div className="overview-pottrust-wrapper">
-                              <p id="trustButton" onClick={() => toggleTrust()} className='overview-pottrust-button'>Trust</p>
-                              <ul className="overview-pottrust-stats">
-                                   <li>{props.trustInfo[0]}</li>
-                                   <li>{props.trustInfo[1]}</li>
-                              </ul>
-                         </div>
-                    </div>
-               </div>
-               <hr />
-
-               <div className="overview-rangeinput">
                     <ul>
-                         <li>Level</li>
-                         <li id="current-level-displayer">{rangeValue}</li>
+                         <li><h1>{props.overviewInfo[1]}</h1></li>
+                         <li><p style={{ color: 'var(--subtextcolor)' }}>{props.overviewInfo[2]}</p></li>
                     </ul>
-                    <input type="range" min="1" max={maxRangeValue} value={rangeValue} onChange={handleRangeChange} />
                </div>
-               <hr />
+               <ul className="overview-head-2">
+                    <li>{props.overviewInfo[3]}</li>
+                    <li>{props.overviewInfo[4]}</li>
+               </ul>
+          </div>
+          <hr />
 
-               <div className="overview-stats-wrapper">
-                    <div className="stat-wrapper">
-                         <p>Range</p>
-                         {displayRange}
+          <div className="overview-buttons">
+               <div className="overview-buttons-wrapper">
+                    <div id="elite0Button" className="overview-elite-button" onClick={() => elitePicker(0)}>
+                         <Elite0svg />
                     </div>
-                    <ul className="stat-wrapper">
-                         <li>Health</li>
-                         <li><h2>{displayHp}</h2></li>
-                    </ul>
-                    <ul className="stat-wrapper">
-                         <li>Defense</li>
-                         <li><h2>{displayDef}</h2></li>
-                    </ul>
-                    <ul className="stat-wrapper">
-                         <li>Arts Resistance</li>
-                         <li><h2>{displayRes}</h2></li>
-                    </ul>
-                    <ul className="stat-wrapper">
-                         <li>Attack</li>
-                         <li><h2>{displayAtk}</h2></li>
-                    </ul>
-                    <ul className="stat-wrapper">
-                         <li>Redeploy</li>
-                         <li><h2>{displayRedeploy}s</h2></li>
-                    </ul>
-                    <ul className="stat-wrapper">
-                         <li>Block</li>
-                         <li><h2>{displayBlock}</h2></li>
-                    </ul>
-                    <ul className="stat-wrapper">
-                         <li>DP Cost</li>
-                         <li><h2>{displayCost}</h2></li>
-                    </ul>
-                    <ul className="stat-wrapper">
-                         <li>Attack Speed</li>
-                         <li><h2>{displayAspd}s</h2></li>
-                    </ul>
-               </div>
-               <hr></hr>
-
-               <div className="overview-trait-wrapper">
-                    <h2>Trait</h2>
-                    {props.traitText}
-               </div>
-               <hr style={talent1Visibility} />
-
-               <div className="overview-talents-wrapper" style={talent1Visibility}>
-                    <h2 className='wrapper-name'>TALENTS</h2>
-                    <div className='talent-wrapper'>
-                         <div style={talent1Visibility}>
-                              {props.talent1Title}
-                              {displayTalent1}
-                         </div>
-                         <div style={talent2Visibility}>
-                              {props.talent2Title}
-                              {displayTalent2}
-                         </div>
+                    <div id="elite1Button" className="overview-elite-button" onClick={() => elitePicker(1)} style={{ display: props.showElites[0] }}>
+                         <Elite1svg />
+                    </div>
+                    <div id="elite2Button" className="overview-elite-button" onClick={() => elitePicker(2)} style={{ display: props.showElites[1] }}>
+                         <Elite2svg />
                     </div>
                </div>
-               <hr />
-
-               <div className="overview-bskills-wrapper">
-                    <h2 className='wrapper-name'>BASE SKILLS</h2>
-                    <div className='bskills-wrapper'>
-                         <ul style={bskill1Visibility}>
-                              <li className="bskill-title">
-                                   <h2>{props.bskill1Title}</h2>
-                                   <img src={props.bskill1img} />
-                              </li>
-                              <li>{displayBskill1}</li>
-                         </ul>
-                         <ul style={bskill2Visibility}>
-                              <li className="bskill-title">
-                                   <h2>{props.bskill2Title}</h2>
-                                   <img src={props.bskill2img} />
-                              </li>
-                              <li>{displayBskill2}</li>
+               <div className="overview-buttons-wrapper">
+                    <div className="overview-pottrust-wrapper">
+                         <p id="potentialButton" onClick={() => togglePotential()} className='overview-pottrust-button'>Potentials</p>
+                         <ul className="overview-pottrust-stats">
+                              <li>{props.potentialInfo[0]}</li>
+                              <li>{props.potentialInfo[1]}</li>
+                              <li>{props.potentialInfo[2]}</li>
+                              <li>{props.potentialInfo[3]}</li>
+                              <li>{props.potentialInfo[4]}</li>
                          </ul>
                     </div>
-
+                    <div className="overview-pottrust-wrapper">
+                         <p id="trustButton" onClick={() => toggleTrust()} className='overview-pottrust-button'>Trust</p>
+                         <ul className="overview-pottrust-stats">
+                              <li>{props.trustInfo[0]}</li>
+                              <li>{props.trustInfo[1]}</li>
+                         </ul>
+                    </div>
                </div>
           </div>
-     )
+          <hr />
+
+          <div className="overview-rangeinput">
+               <ul>
+                    <li>Level</li>
+                    <li id="current-level-displayer">{rangeValue}</li>
+               </ul>
+               <input type="range" min="1" max={maxRangeValue} value={rangeValue} onChange={handleRangeChange} />
+          </div>
+          <hr />
+
+          <div className="overview-stats-wrapper">
+               <div className="stat-wrapper">
+                    <p>Range</p>
+                    {displayRange}
+               </div>
+               <ul className="stat-wrapper">
+                    <li>Health</li>
+                    <li><h2>{displayHp}</h2></li>
+               </ul>
+               <ul className="stat-wrapper">
+                    <li>Defense</li>
+                    <li><h2>{displayDef}</h2></li>
+               </ul>
+               <ul className="stat-wrapper">
+                    <li>Arts Resistance</li>
+                    <li><h2>{displayRes}</h2></li>
+               </ul>
+               <ul className="stat-wrapper">
+                    <li>Attack</li>
+                    <li><h2>{displayAtk}</h2></li>
+               </ul>
+               <ul className="stat-wrapper">
+                    <li>Redeploy</li>
+                    <li><h2>{displayRedeploy}s</h2></li>
+               </ul>
+               <ul className="stat-wrapper">
+                    <li>Block</li>
+                    <li><h2>{displayBlock}</h2></li>
+               </ul>
+               <ul className="stat-wrapper">
+                    <li>DP Cost</li>
+                    <li><h2>{displayCost}</h2></li>
+               </ul>
+               <ul className="stat-wrapper">
+                    <li>Attack Speed</li>
+                    <li><h2>{displayAspd}s</h2></li>
+               </ul>
+          </div>
+          <hr></hr>
+
+          <div className="overview-trait-wrapper">
+               <h2>Trait</h2>
+               {props.traitText}
+          </div>
+          <hr style={{ display: displayTalentWrapper }} />
+
+          <div className="overview-talents-wrapper" style={{ display: displayTalentWrapper }}>
+               <h2 className='wrapper-name'>TALENTS</h2>
+               <div className='talent-wrapper'>
+                    <div style={{ display: talent1Visibility }}>
+                         {props.talent1Title}
+                         {displayTalent1}
+                    </div>
+                    <div style={{ display: talent2Visibility }}>
+                         {props.talent2Title}
+                         {displayTalent2}
+                    </div>
+               </div>
+          </div>
+          <hr />
+
+          <div className="overview-bskills-wrapper" style={{ display: displayBskillWrapper }}>
+               <h2 className='wrapper-name'>BASE SKILLS</h2>
+               <div className='bskills-wrapper'>
+                    <ul style={{ display: bskill1Visibility }}>
+                         <li className="bskill-title">
+                              <h2>{props.bskill1Title}</h2>
+                              <img src={props.bskill1img} />
+                         </li>
+                         <li>{displayBskill1}</li>
+                    </ul>
+                    <ul style={{ display: bskill2Visibility }}>
+                         <li className="bskill-title">
+                              <h2>{props.bskill2Title}</h2>
+                              <img src={props.bskill2img} />
+                         </li>
+                         <li>{displayBskill2}</li>
+                    </ul>
+               </div>
+
+          </div>
+     </div>
+)
 }
 
 export default overview

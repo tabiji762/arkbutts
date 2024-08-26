@@ -112,6 +112,7 @@ function Manifest() {
                     talent1Title={<h2>Mon3tr</h2>}
                     talent2Title={<h2>Non-Damaging Restructuring</h2>}
 
+                    talentWrapperVisibility={['none', 'flex', 'flex']}
                     talent1Visibility={['flex', 'flex', 'flex']}
                     talent2Visibility={['none', 'none', 'flex']}
 
@@ -143,6 +144,7 @@ function Manifest() {
                     bskill1img='bskills/bskill_ws_p5.png'
                     bskill2img='bskills/bskill_ctrl_p_spd.png'
 
+                    bskillWrapperVisibility={['flex', 'flex', 'flex']}
                     bskill1Visibility={['flex', 'flex', 'flex']}
                     bskill2Visibility={['none', 'none', 'flex']}
 

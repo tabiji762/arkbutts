@@ -109,9 +109,12 @@ function Manifest() {
 
                     traitText={<p>Deals Arts Damage</p>}
 
+                    // flex or none
+                    
                     talent1Title={<h2>???</h2>}
                     talent2Title={<h2>Emotional Absorption</h2>}
-
+                    
+                    talentWrapperVisibility={['flex', 'flex', 'flex']}
                     talent1Visibility={['flex', 'flex', 'none']}
                     talent2Visibility={['none', 'none', 'flex']}
 
@@ -142,6 +145,8 @@ function Manifest() {
 
                     bskill1img='bskills/bskill_ctrl_t_spd.png'
                     bskill2img='bskills/bskill_dorm_all2.png'
+
+                    bskillWrapperVisibility={['flex', 'flex', 'flex']}
 
                     bskill1Visibility={['flex', 'flex', 'flex']}
                     bskill2Visibility={['none', 'none', 'flex']}

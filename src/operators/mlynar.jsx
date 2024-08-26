@@ -111,7 +111,8 @@ function Manifest() {
 
                     talent1Title={<h2>Wanderer</h2>}
                     talent2Title={<h2>Unmoved</h2>}
-
+                    
+                    talentWrapperVisibility={['none', 'flex', 'flex']}
                     talent1Visibility={['none', 'flex', 'flex']}
                     talent2Visibility={['none', 'none', 'flex']}
 
@@ -167,6 +168,7 @@ function Manifest() {
                     bskill1img='bskills/bskill_ctrl_cost.png'
                     bskill2img='bskills/bskill_ctrl_lonely.png'
 
+                    bskillWrapperVisibility={['flex', 'flex', 'flex']}
                     bskill1Visibility={['flex', 'flex', 'flex']}
                     bskill2Visibility={['none', 'none', 'flex']}
 
