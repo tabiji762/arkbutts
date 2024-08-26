@@ -1,22 +1,15 @@
 import {Link} from 'react-router-dom';
 import Starsvg from './svg/starsvg.jsx'
 
-function Cards(props){
-
-     const characterPortrait = {
-          backgroundImage: 'url('+props.portrait+')',
-     }
-     const subclassImage = {
-          backgroundImage: 'url('+props.subclassImage+')',
-     }
+export default function Cards(props){
      return(
-          <Link to={props.link} className='cardsContainer' style={characterPortrait}>
-               <span className="subclass-image-container" style={subclassImage}></span>
-               <div className='cardsContent'>
-                    <h2>{props.name}</h2>
-                    <div className='cardsClassAndStars'>
+          <Link to={props.link} className='operator-card-container' style={{backgroundImage: 'linear-gradient(to top, rgb(20, 20, 20) 10%, rgba(0, 0, 0, 0) 70%), url('+props.portrait+')'}}>
+               <span className="subclass-image-container" style={{backgroundImage: 'url('+props.subclassImage+')'}}></span>
+               <div className='operator-card-content'>
+                    <h3>{props.name}</h3>
+                    <div className='class-star-wrapper'>
                          <p>{props.mainClass}</p>
-                         <div className='cardsStars'>
+                         <div className='card-stars'>
                               <p>{props.stars}</p>
                               <Starsvg/>
                          </div>
@@ -25,5 +18,3 @@ function Cards(props){
           </Link>
      )
 }
-
-export default Cards

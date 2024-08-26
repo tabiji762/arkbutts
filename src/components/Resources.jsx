@@ -6,14 +6,9 @@ import Elite2svg from './svg/Elite2svg.jsx';
 import Clocksvg from './svg/Clock.jsx';
 
 function resources(props) {
-
-     const displayer = {
-          display: props.display,
-     }
-
-
+     
      return (
-          <div style={displayer} className='resources-container'>
+          <div style={{ display: props.display }} className='resources-container'>
 
                <p className='sections-navigator' style={{ display: props.eliteVisibility[0] }}>Elite Rank | Resources</p>
                <ul className='overview-resources' style={{ display: props.eliteVisibility[0] }}>

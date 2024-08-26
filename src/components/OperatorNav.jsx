@@ -8,13 +8,14 @@ import Opensvg from './svg/menuopensvg';
 export default function OperatorNav(props) {
 
      useEffect(() => {
-          root.style.setProperty('--accentbg', props.darkAccentBg);
-          root.style.setProperty('--accentcolor', props.darkAccentColor);
+          root.style.setProperty('--accentshadow', props.accentShadow);
+          root.style.setProperty('--accentcolor', props.accentColor);
      }, []);
 
      // stuff for properly toggling the menu
      const [sidebarPosition, setSidebarPosition] = useState('translateX(0)');
      const [sidebarResize, setSidebarResize] = useState('300px');
+     const [sidebarShadow, setSidebarShadow] = useState('2px 0px 10px var(--shadow)')
      const [topbarPosition, setTopbarPosition] = useState('300px');
      const [bodyPadding, setBodyPadding] = useState('150px 100px 50px 400px');
      const [mobile, setMobile] = useState(false);
@@ -29,6 +30,7 @@ export default function OperatorNav(props) {
           transform: sidebarPosition,
           width: sidebarResize,
           transition: 'transform ' + transition,
+          boxShadow: sidebarShadow,
      }
      const pushTopbarPos = {
           marginLeft: topbarPosition,
@@ -43,14 +45,17 @@ export default function OperatorNav(props) {
                     setSidebarPosition('translateX(-100%)');
                     setTopbarPosition('0');
                     setBodyPadding('150px 200px 50px 200px');
+                    setSidebarShadow('none')
                }
                else {
                     setSidebarPosition('translateX(0)');
                     setTopbarPosition('300px');
                     setBodyPadding('150px 100px 50px 400px');
+                    setSidebarShadow('2px 0px 10px var(--shadow)')
                }
           }
           else {
+               setSidebarShadow('none')
                if (sidebarPosition === 'translateX(0)') {
                     document.body.style.overflow = 'visible';
                     setSidebarPosition('translateX(-100%)');
@@ -82,6 +87,7 @@ export default function OperatorNav(props) {
                setTopbarPosition('0');
                setBodyPadding('150px 20px 50px 20px');
                setTransition('0s ease');
+               setSidebarShadow('none')
           }
           else {
                console.log('desktop layout')
@@ -91,6 +97,7 @@ export default function OperatorNav(props) {
                setSidebarPosition('translateX(0)');
                setTopbarPosition('300px');
                setBodyPadding('150px 100px 50px 400px');
+               setSidebarShadow('2px 0px 10px var(--shadow)')
           }
      }, [windowWidth]);
 
@@ -103,9 +110,9 @@ export default function OperatorNav(props) {
                const tabElement = document.getElementById(`${t}Tab`);
 
                if (t === tab) {
-                    tabElement.classList.add('activeTab');
+                    tabElement.classList.add('active-button');
                } else {
-                    tabElement.classList.remove('activeTab');
+                    tabElement.classList.remove('active-button');
                }
           });
 
@@ -116,17 +123,17 @@ export default function OperatorNav(props) {
 
      //gives overviewtab a style on load
      useEffect(() => {
-          document.getElementById('overviewTab').classList.add('activeTab');
+          document.getElementById('overviewTab').classList.add('active-button');
      }, []);
 
      return (
           <>
-               <div className="opNav">
+               <div className="operator-nav">
                     <div className="sidebar" style={pushSidebarPos}>
-                         <div className="titleBox">
-                              <div className="titleElements">
+                         <div className="sidebar-head">
+                              <div className="operator-head">
                                    <img src={props.profile} />
-                                   <div className="operatorInfo">
+                                   <div>
                                         <h2>{props.operatorName}</h2>
                                         <p>{props.operatorClass}</p>
                                    </div>
@@ -135,27 +142,25 @@ export default function OperatorNav(props) {
                                    <Closesvg />
                               </div>
                          </div>
-                         <div className="tabsContainer">
+                         <div className="sidebar-tabs">
                               <Link to='/arkbutts/'><p>BACK</p></Link>
-                              <p onClick={() => sendTab('overview')} id="overviewTab" style={{display: props.showTabs[0]}}>Overview</p>
-                              <p onClick={() => sendTab('skills')} id="skillsTab" style={{display: props.showTabs[1]}}>Skills</p>
-                              <p onClick={() => sendTab('modules')} id="modulesTab" style={{display: props.showTabs[2]}}>Modules</p>
-                              <p onClick={() => sendTab('summon')} id="summonTab" style={{display: props.showTabs[3]}}>Summon</p>
-                              <p onClick={() => sendTab('files')} id="filesTab" style={{display: props.showTabs[4]}}>Files</p>
-                              <p onClick={() => sendTab('outfits')} id="outfitsTab" style={{display: props.showTabs[5]}}>Outfits</p>
-                              <p onClick={() => sendTab('resources')} id="resourcesTab" style={{display: props.showTabs[7]}}>Resources</p>
+                              <p onClick={() => sendTab('overview')} id="overviewTab" style={{ display: props.showTabs[0] }}>Overview</p>
+                              <p onClick={() => sendTab('skills')} id="skillsTab" style={{ display: props.showTabs[1] }}>Skills</p>
+                              <p onClick={() => sendTab('modules')} id="modulesTab" style={{ display: props.showTabs[2] }}>Modules</p>
+                              <p onClick={() => sendTab('summon')} id="summonTab" style={{ display: props.showTabs[3] }}>Summon</p>
+                              <p onClick={() => sendTab('files')} id="filesTab" style={{ display: props.showTabs[4] }}>Files</p>
+                              <p onClick={() => sendTab('outfits')} id="outfitsTab" style={{ display: props.showTabs[5] }}>Outfits</p>
+                              <p onClick={() => sendTab('resources')} id="resourcesTab" style={{ display: props.showTabs[7] }}>Resources</p>
                          </div>
-                         <div className="extraLinks">
+                         <div className='sidebar-links'>
                               <a href="https://github.com/tabiji762/arkbutts"><Infosvg /></a>
                          </div>
                     </div>
-                    <div className="topbar">
-                         <div className="topbarContent" style={pushTopbarPos}>
-                              <div onClick={toggleMenu}>
-                                   <Opensvg />
-                              </div>
-                              <h1>{props.title}</h1>
+                    <div className="topbar" style={pushTopbarPos}>
+                         <div onClick={toggleMenu}>
+                              <Opensvg />
                          </div>
+                         <h1>{props.title}</h1>
                     </div>
                </div>
                <div style={pushBodyPadding}>

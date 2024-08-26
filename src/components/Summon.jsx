@@ -6,10 +6,6 @@ import Elite2svg from './svg/Elite2svg.jsx';
 
 function summon(props) {
 
-     const displayer = {
-          display: props.display,
-     }
-
      const [currentHpRange, setCurrentHpRange] = useState(props.hpRange.slice(0, 2))
      const [currentDefRange, setCurrentDefRange] = useState(props.defRange.slice(0, 2))
      const [currentAtkRange, setCurrentAtkRange] = useState(props.atkRange.slice(0, 2))
@@ -79,9 +75,9 @@ function summon(props) {
 
 
      return (
-          <div style={displayer} className="summon-container">
-               <div className='summon-head'>
-                    <div className='info-container'>
+          <div style={{ display: props.display }} className="summon-wrapper">
+               <div className='summon-head-wrapper'>
+                    <div className='summon-head-content'>
                          <img src={props.summonImg} />
                          <ul>
                               <li><h1>{props.summonName}</h1></li>
@@ -91,7 +87,7 @@ function summon(props) {
                               </li>
                          </ul>
                     </div>
-                    <ul className='button-container'>
+                    <ul className='summon-buttons-wrapper'>
                          <li id="button1" onClick={()=>handleEliteChange(0)}><Elite0svg /></li>
                          <li id="button2"  onClick={()=>handleEliteChange(1)} style={{display: props.buttonVisibility[0]}}><Elite1svg /></li>
                          <li id="button3"  onClick={()=>handleEliteChange(2)} style={{display: props.buttonVisibility[1]}}><Elite2svg /></li>
@@ -99,17 +95,17 @@ function summon(props) {
                </div>
                <hr />
 
-               <div className='summon-range-container'>
-                    <div>                    
-                         <p>Level</p>
-                         <p className='range-display'>{rangeValue}</p>
-                    </div>
-                    <input type="range" min="1" max={rangeMaxValue} value={rangeValue} onChange={handleRangeChange}></input>
+               <div className='summon-rangeinput'>
+                    <ul>                    
+                         <li><p>Level</p></li>
+                         <li><p>{rangeValue}</p></li>
+                    </ul>
+                    <input type="range" min="1" max={rangeMaxValue} value={rangeValue} onChange={handleRangeChange} />
                </div>
                <hr />
 
-               <div className='summon-stats-container'>
-                    <div className='range-stat-container'>
+               <div className='summon-stats-wrapper'>
+                    <div className='range-stat'>
                          <p>Range</p>
                          {displayRangeStat}
                     </div>

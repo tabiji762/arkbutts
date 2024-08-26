@@ -5,10 +5,6 @@ import Elite2svg from './svg/Elite2svg.jsx';
 
 function Outfits(props){
 
-     const displayer = {
-          display: props.display,
-     }
-
      useEffect(()=>{
           document.getElementById('outfitbutton1').classList.add('active-button')
      }, [])
@@ -45,8 +41,8 @@ function Outfits(props){
      }
 
      return(
-          <div style={displayer} className='outfits-container'>
-               <div className='outfits-buttons-container'>
+          <div style={{ display: props.display }} className='outfits-wrapper'>
+               <div className='outfits-buttons-wrapper'>
                     <div id="outfitbutton1" onClick={()=>handleOutfitChange(0)} style={{display: props.buttonVisibility[0]}} ><Elite0svg /></div>
                     <div id="outfitbutton2" onClick={()=>handleOutfitChange(1)} style={{display: props.buttonVisibility[1]}} ><Elite1svg /></div>
                     <div id="outfitbutton3" onClick={()=>handleOutfitChange(2)} style={{display: props.buttonVisibility[2]}} ><Elite2svg /></div>
@@ -57,13 +53,12 @@ function Outfits(props){
                     <img id="outfitbutton8" onClick={()=>handleOutfitChange(7)} style={{display: props.buttonVisibility[7]}} src={props.outfitBrandLinks[4]}/>
                </div>
                <hr />
-               <div className='outfits-content-container'>
-                    <div className='outfits-image-container'>
+               <div className='outfits-content-wrapper'>
+                    <div className='outfits-image-wrapper'>
                          <img src={outfitImgLink} />        
                     </div>
-
-                    <div className='outfits-info-container'>
-                         <div className='outfits-info-head'>
+                    <div className='outfits-info-wrapper'>
+                         <div>
                               <h1>{outfitName}</h1>
                               <p>{outfitAddendum}</p>
                          </div>

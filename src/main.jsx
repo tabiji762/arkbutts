@@ -4,10 +4,10 @@ import App from './App.jsx'
 
 import './cssSheets/index.css'
 
-import './cssSheets/mainnav.css'
-import './cssSheets/opnav.css'
+import './cssSheets/home.css'
+import './cssSheets/operatornav.css'
+
 import './cssSheets/cards.css'
-import './cssSheets/operatorFilter.css'
 
 import './cssSheets/overview.css'
 import './cssSheets/skills.css'

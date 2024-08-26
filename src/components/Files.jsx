@@ -204,13 +204,13 @@ function Files(props) {
 
 
      return (
-          <div style={displayer} className="files-container">
-               <ul className="files-buttons">
+          <div style={displayer} className="files-wrapper">
+               <ul className="files-buttons-wrapper">
                     <li id="filesbutton1" onClick={() => switchPage('files')}><Description /></li>
                     <li id="filesbutton2" onClick={() => switchPage('dialogue')}><Mic /></li>
                </ul>
 
-               <ul className="files-group" style={filesDisplay}>
+               <ul className="files-wrapper" style={filesDisplay}>
                     <li style={{ display: props.filesDisplay[0] }}>
                          <div className='files-head' onClick={() => toggleAccordion(0)}>
                               <h2>Basic Info</h2>
@@ -219,7 +219,7 @@ function Files(props) {
                               </div>
                          </div>
                          <hr />
-                         <div id='basic-info-content' className='files-wrapper-2' style={{ height: basicInfoHeight }}>
+                         <div id='basic-info-content' className='files-wrapper-content' style={{ height: basicInfoHeight }}>
                               <p>[Codename] <span className='focusText'>{props.basicInfo[0]}</span></p>
                               <p>[Gender] <span className='focusText'>{props.basicInfo[1]}</span></p>
                               <p>[Combat Experience] <span className='focusText'>{props.basicInfo[2]}</span></p>
@@ -238,7 +238,7 @@ function Files(props) {
                               </div>
                          </div>
                          <hr />
-                         <div id='physical-exam-content' className='files-wrapper-2' style={{ maxHeight: physicalExamHeight }}>
+                         <div id='physical-exam-content' className='files-wrapper-content' style={{ maxHeight: physicalExamHeight }}>
                               <p>[Physical Strength] <span className='focusText'>{props.physicalExam[0]}</span></p>
                               <p>[Mobility] <span className='focusText'>{props.physicalExam[1]}</span></p>
                               <p>[Physiological Endurance] <span className='focusText'>{props.physicalExam[2]}</span></p>
@@ -255,7 +255,7 @@ function Files(props) {
                               </div>
                          </div>
                          <hr />
-                         <div id='profile-content' className='files-wrapper-2' style={{ maxHeight: profileHeight }}>
+                         <div id='profile-content' className='files-wrapper-content' style={{ maxHeight: profileHeight }}>
                               {props.profile}
                          </div>
                     </li>
@@ -267,7 +267,7 @@ function Files(props) {
                               </div>
                          </div>
                          <hr />
-                         <div id='clinical-analysis-content' className='files-wrapper-2' style={{ maxHeight: clinicalAnalysisHeight }}>
+                         <div id='clinical-analysis-content' className='files-wrapper-content' style={{ maxHeight: clinicalAnalysisHeight }}>
                               {props.clinicalAnalysis}
                          </div>
                     </li>
@@ -279,7 +279,7 @@ function Files(props) {
                               </div>
                          </div>
                          <hr />
-                         <div id='archive-file-1-content' className='files-wrapper-2' style={{ maxHeight: archiveFile1Height }}>
+                         <div id='archive-file-1-content' className='files-wrapper-content' style={{ maxHeight: archiveFile1Height }}>
                               {props.archiveFile1}
                          </div>
                     </li>
@@ -291,7 +291,7 @@ function Files(props) {
                               </div>
                          </div>
                          <hr />
-                         <div id='archive-file-2-content' className='files-wrapper-2' style={{ maxHeight: archiveFile2Height }}>
+                         <div id='archive-file-2-content' className='files-wrapper-content' style={{ maxHeight: archiveFile2Height }}>
                               {props.archiveFile2}
                          </div>
                     </li>
@@ -303,7 +303,7 @@ function Files(props) {
                               </div>
                          </div>
                          <hr />
-                         <div id='archive-file-3-content' className='files-wrapper-2' style={{ maxHeight: archiveFile3Height }}>
+                         <div id='archive-file-3-content' className='files-wrapper-content' style={{ maxHeight: archiveFile3Height }}>
                               {props.archiveFile3}
                          </div>
                     </li>
@@ -315,7 +315,7 @@ function Files(props) {
                               </div>
                          </div>
                          <hr />
-                         <div id='archive-file-4-content' className='files-wrapper-2' style={{ maxHeight: archiveFile4Height }}>
+                         <div id='archive-file-4-content' className='files-wrapper-content' style={{ maxHeight: archiveFile4Height }}>
                               {props.archiveFile4}
                          </div>
                     </li>
@@ -327,7 +327,7 @@ function Files(props) {
                               </div>
                          </div>
                          <hr />
-                         <div id='promotion-record-content' className='files-wrapper-2' style={{ maxHeight: promotionRecordHeight }}>
+                         <div id='promotion-record-content' className='files-wrapper-content' style={{ maxHeight: promotionRecordHeight }}>
                               {props.promotionRecord}
                          </div>
                     </li>
@@ -339,7 +339,7 @@ function Files(props) {
                               </div>
                          </div>
                          <hr />
-                         <div id='class-conversion-1-content' className='files-wrapper-2' style={{ maxHeight: classConversionRecord1Height }}>
+                         <div id='class-conversion-1-content' className='files-wrapper-content' style={{ maxHeight: classConversionRecord1Height }}>
                               {props.classConversionRecord1}
                          </div>
                     </li>
@@ -351,13 +351,15 @@ function Files(props) {
                               </div>
                          </div>
                          <hr />
-                         <div id='class-conversion-2-content' className='files-wrapper-2' style={{ maxHeight: classConversionRecord2Height }}>
+                         <div id='class-conversion-2-content' className='files-wrapper-content' style={{ maxHeight: classConversionRecord2Height }}>
                               {props.classConversionRecord2}
                          </div>
                     </li>
                </ul>
 
-               <ul className="dialogue-group" style={dialogueDisplay}>
+
+
+               <ul className="dialogue-wrapper" style={dialogueDisplay}>
                     <li>
                          <p className='focusText'>Appointed as Assistant</p>
                          {props.appointedAsAssistant}

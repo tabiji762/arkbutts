@@ -1,0 +1,167 @@
+/* navigation bar */
+.main-nav{
+     display: flex;
+     gap: 1rem;
+     justify-content: space-between;
+     align-items: center;
+     height: 80px;
+     padding: 0 20px;
+     background-color: var(--bgcolor1);
+     box-shadow: 0 2px 10px var(--shadow);
+}
+.main-nav > a > svg{
+     width: 40px;
+     padding: 5px;
+     aspect-ratio: 1;
+     display: block;
+     fill: var(--svgcolor);
+}
+
+/* operator container */
+.operators-page-container{
+     display: flex;
+     flex-direction: column;
+     padding: 50px 200px;
+
+     & hr{
+          margin: 1rem 0 2rem 0;
+     }
+}
+@media (max-width: 1200px){
+     .operators-page-container{
+          padding: 50px 20px;
+     }
+}
+
+/* filter button */
+#filter-button{
+     display: flex;
+     align-items: center;
+     margin: 0 1rem 1rem 1rem;
+     width: max-content;
+     background-color: var(--bgcolor2);
+     box-shadow: 0 2px 10px var(--shadow);
+     border-radius: 5px;
+     transition: 0.2s ease;
+     user-select: none;
+
+     & h2{
+          padding-left: 1rem;
+     }
+     & div{
+          width: 50px;
+          height: 50px;
+          transform: rotate(-90deg);
+          transition: 0.5s ease;
+
+          & svg{
+               width: 100%;
+               aspect-ratio: 1;
+               fill: var(--svgcolor);
+          }
+     }
+     & .toggle-filter-button-arrow{
+          transform: rotate(90deg);
+     }
+}
+#filter-button:hover{
+     transform: scale(1.05);
+     background-color: var(--bgcolor3);
+     cursor: pointer;
+}
+
+/* filter wrapper */
+.filter-grid{
+     display: grid;
+     transition: 0.5s ease;
+}
+
+.filter-wrapper{
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-end;
+     gap: 2rem;
+     padding: 0rem 1rem;
+     overflow: hidden;
+     user-select: none;
+}
+
+/* other filter */
+.other-filter{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     gap: 0.5rem;
+     user-select: none;
+     padding-top: 1rem;
+
+     & li{
+          display: flex;
+          align-items: center;
+          padding: 0 .2rem 0 .5rem;
+          border-radius: 5px;
+          background-color: var(--bgcolor2);
+          box-shadow: 0 2px 10px var(--shadow);
+          transition: 0.2s ease;
+
+          & p{
+               padding: 0.4rem 0;
+          }
+          & svg{
+               display: block;
+               width: 25px;
+               aspect-ratio: 1;
+               fill: var(--starcolor)
+          }
+     }
+     & li:nth-child(7){
+          padding: 0 0.5rem;
+     }
+     & li:hover{
+          transform: scale(1.05);
+          background-color: var(--bgcolor3);
+          cursor: pointer;
+     }
+}
+
+/* subclass wrapper*/
+.subclass-wrapper{
+     display: flex;
+     flex-direction: column;
+     gap: 0.5rem;
+}
+.subclass-wrapper:nth-child(9){
+     margin-bottom: 1rem;
+}
+.subclass-wrapper h2{
+     cursor: pointer;
+}
+.subclass-container{
+     display: flex;
+     flex-wrap: wrap;
+     gap: 0.5rem;
+}
+.subclass-container > li{
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+     padding: .2rem .5rem .2rem .2rem;
+     border-radius: 5px;
+     background-color: var(--bgcolor2);
+     box-shadow: 0 2px 10px var(--shadow);
+     transition: 0.2s ease;
+     overflow: visible;
+}
+.subclass-container > li:hover{
+     transform: scale(1.05);
+     background-color: var(--bgcolor3);
+     cursor: pointer;
+}
+.subclass-container > li > span{
+     display: block;
+     width: 30px;
+     aspect-ratio: 1;
+     background-size: contain;
+     background-position: center;
+     background-repeat: no-repeat;
+}

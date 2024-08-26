@@ -2,10 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 function Modules(props) {
 
-     const displayer = {
-          display: props.display,
-     }
-
      useEffect(() => {
           document.getElementById('module-button1').classList.add('active-button')
           document.getElementById('module-level1').classList.add('active-button')
@@ -143,27 +139,27 @@ function Modules(props) {
      }
  
      return (
-          <div style={displayer} className="modules-container">
-               <div className="selector-container">
+          <div style={{ display: props.display }} className='modules-wrapper'>
+               <div className='modules-buttons-wrapper'>
                     <h2 id='module-button1' onClick={() => handleModuleChange(0)} style={{display: props.showModuleButtons[0]}}>I</h2>
                     <h2 id='module-button2' onClick={() => handleModuleChange(1)} style={{display: props.showModuleButtons[1]}}>II</h2>
                     <h2 id='module-button3' onClick={() => handleModuleChange(2)} style={{display: props.showModuleButtons[2]}}>III</h2>
                     <h2 id='module-button4' onClick={() => handleModuleChange(3)} style={{display: props.showModuleButtons[3]}}>IV</h2>
                     <h2 id='module-button5' onClick={() => handleModuleChange(4)} style={{display: props.showModuleButtons[4]}}>V</h2>
                </div>
-               <div className="modules-content">
-                    <div className="head">
-                         <div className='modules-head-1'>
-                              <img id="module-img" src={displayModuleImg} />
-                              <div className='module-head-text'>
-                                   <h1>{displayModuleName}</h1>
-                                   <div>
-                                        <span id="module-type-display" style={{ backgroundImage: displayModuleType }} />
+               <div className='modules-content-wrapper'>
+                    <div className='modules-content-head'>
+                         <div className='modules-content-head-content'>
+                              <img src={displayModuleImg} />
+                              <ul>
+                                   <li><h1>{displayModuleName}</h1></li>
+                                   <li>
                                         <p>{displayModuleCode}</p>
-                                   </div>
-                              </div>
+                                        <span style={{ backgroundImage: displayModuleType }} />
+                                   </li>
+                              </ul>
                          </div>
-                         <div className='module-level-selector-container'>
+                         <div className='modules-stages-wrapper'>
                               <span id="module-level1" onClick={() => handleModuleStage(0)} style={{backgroundImage: "url('uniequipstage/stg1.png')"}}/>
                               <span id="module-level2" onClick={() => handleModuleStage(1)} style={{backgroundImage: "url('uniequipstage/stg2.png')"}}/>
                               <span id="module-level3" onClick={() => handleModuleStage(2)} style={{backgroundImage: "url('uniequipstage/stg3.png')"}}/>
@@ -171,36 +167,36 @@ function Modules(props) {
                     </div>
                     <hr />
 
-                    <ul className='module-stats-container'>
+                    <ul className='modules-stat-wrapper'>
                          <li style={displayStat1Container}>
                               <p>{currentStatLabels[0]}</p>
-                              <p className='stat-number'>{displayStat1Value}</p>
+                              <p>{displayStat1Value}</p>
                          </li>
                          <li style={displayStat2Container}>
                               <p>{currentStatLabels[1]}</p>
-                              <p className='stat-number'>{displayStat2Value}</p>
+                              <p>{displayStat2Value}</p>
                          </li>
                          <li style={displayStat3Container}>
                               <p>{currentStatLabels[2]}</p>
-                              <p className='stat-number'>{displayStat3Value}</p>
+                              <p>{displayStat3Value}</p>
                          </li>
                     </ul>
                     <hr />
 
-                    <div className="module-trait-container">
-                         <div>
+                    <div className='modules-trait-wrapper'>
+                         <div className='modules-trait-content'>
                               <h2>Trait</h2>
                               <p>{props.ogTrait}</p>
                               {displayTraitContent}
                          </div>
-                         <div style={displayRangeContainer}>
+                         <div className='modules-trait-range-wrapper' style={displayRangeContainer}>
                               <p>Range</p>
                               {displayRange}
                          </div>
                     </div>
                     <hr />
 
-                    <div className="module-talent-container">
+                    <div className='modules-talent-wrapper'>
                          <h2>{displayTalentName}</h2>
                          {displayTalentContent}
                     </div>

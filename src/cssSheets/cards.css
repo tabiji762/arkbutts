@@ -1,74 +1,81 @@
-.cardsContainer{
-     display: flex;
-     flex-direction: column;
-     justify-content: space-between;
-     align-items: flex-start;
-     width: 100%;
+.operator-cards-wrapper{
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+     gap: 1rem;
+     padding: 0 1rem;
+}
+@media (max-width: 400px){
+     .operator-cards-wrapper{
+          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+     }
+}
+
+.operator-card-container{
      height: 300px;
-     background-color: var(--hoverbg);
-     background-position: center;
-     background-repeat: no-repeat;
-     background-size: 110%;
-     border: solid;
-     border-width: 2px;
-     border-color: var(--bordercolor);
-     contain: content;
-     border-radius: 10px;
-     box-sizing: border-box;
-     transition: background-color 0.2s ease, background-size 0.2s ease, border-color 0.2s ease;
-}
-.cardsContainer:hover{
-     background-color: var(--accentbg);
-     background-size: 115%;
-     border-color: var(--accentcolor)
-}
-
-
-/*moves everything down to bottom*/
-.cardsContainer .subclass-image-container{
-     width: 30px;
-     aspect-ratio: 1;
-     background-size: 80%;
-     background-position: center;
-     background-repeat: no-repeat;
-     box-sizing: border-box;
-     background-color: rgb(20, 20, 20, 0.5);
-     border-bottom-right-radius: 5px;
-     backdrop-filter: blur(3px);
-}
-
-
-.cardsContainer .cardsContent{
      display: flex;
      flex-direction: column;
-     justify-content: flex-end;
-     width: 100%;
-     height: 80%;
-     padding: 0.5rem;
-     background-image: linear-gradient(to top, rgb(20, 20, 20) 10%, rgba(0, 0, 0, 0) 100%);
-     box-sizing: border-box;
-}
-.cardsContainer .cardsContent h2{
-     word-wrap: break-word;
-     font-size: 20px;
+     justify-content: space-between;
+     background-size: 110%;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-color: var(--bgcolor2);
+     border-radius: 10px;
+     border: 3px solid var(--bgcolor2);
+     transition: 0.2s ease;
+     box-shadow: 0 2px 10px var(--shadow);
+     contain: content;
+
+     & .subclass-image-container{
+          display: block;
+          width: 35px;
+          aspect-ratio: 1;
+
+          background-size: 80%;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-color: rgb(20, 20, 20, 0.5);
+          backdrop-filter: blur(5px);
+
+          border-radius: 5px;
+     }
+
+     & .operator-card-content{
+          display: flex;
+          flex-direction: column;
+          padding: 5px;
+
+          & h3{
+               overflow-wrap: break-word;
+          }
+
+          & .class-star-wrapper{
+               display: flex;
+               justify-content: space-between;
+
+               & p{
+                    color: var(--subtextcolor);
+               }
+
+               & .card-stars{
+                    display: flex;
+
+                    & svg{
+                         width: 20px;
+                         aspect-ratio: 1;
+                         display: block;
+                         fill: var(--starcolor)
+                    }
+               }
+          }
+     }
 }
 
-/*displays the class and stars*/
-.cardsClassAndStars{
-     width: 100%;
-     display: flex;
-     flex-direction: row;
-     justify-content: space-between;
-}
-.cardsClassAndStars p, .cardsStars p{
-     color: var(--subtextcolor);
-}
-.cardsStars{
-     display: flex;
-     align-items: center;
-}
-.cardsStars svg{
-     width: 20px;
-     aspect-ratio: 1;
-     fill: var(--starcolor);
+.operator-card-container:hover{
+     transform: scale(1.02);
+     background-size: 115%;
+
+     background-color: var(--accentcolor);
+     border-color: var(--accentcolor);
+
+     box-shadow: 0 5px 10px var(--shadow), 0 -5px 10px var(--accentshadow);
 }

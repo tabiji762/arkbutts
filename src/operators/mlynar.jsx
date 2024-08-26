@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import OpNav from '../components/OpNav.jsx';
+import OperatorNav from '../components/OperatorNav.jsx';
 
 import Overview from '../components/Overview.jsx';
 import Skills from '../components/Skills.jsx';
@@ -14,7 +14,7 @@ import ItemContainer from '../components/ResourceItemContainer.jsx';
 
 function Manifest() {
 
-     const [overviewDisplay, setOverviewDisplay] = useState('grid');
+     const [overviewDisplay, setOverviewDisplay] = useState('flex');
      const [skillsDisplay, setSkillsDisplay] = useState('none');
      const [modulesDisplay, setModulesDisplay] = useState('none');
      const [summonDisplay, setSummonDisplay] = useState('none');
@@ -27,8 +27,8 @@ function Manifest() {
      const showTab = (tab) => {
           console.log(tab)
 
-          setOverviewDisplay(tab === 'overview' ? 'grid' : 'none');
-          setSkillsDisplay(tab === 'skills' ? 'grid' : 'none');
+          setOverviewDisplay(tab === 'overview' ? 'flex' : 'none');
+          setSkillsDisplay(tab === 'skills' ? 'flex' : 'none');
           setModulesDisplay(tab === 'modules' ? 'grid' : 'none');
           setSummonDisplay(tab === 'summon' ? 'grid' : 'none');
           setFilesDisplay(tab === 'files' ? 'grid' : 'none');
@@ -38,7 +38,7 @@ function Manifest() {
           setTabTitle(tab.toUpperCase());
      }
      return (
-          <OpNav
+          <OperatorNav
                title={tabTitle}
                children=''
                operatorName="Młynar"
@@ -48,8 +48,8 @@ function Manifest() {
                showTabs={['block', 'block', 'none', 'none', 'block', 'block', 'block']}
                childClick={showTab}
 
-               darkAccentBg='#302d20'
-               darkAccentColor='#c9a52e'
+               accentShadow='#302d20'
+               accentColor='#c9a52e'
           >
 
                <Overview display={overviewDisplay}
@@ -63,7 +63,7 @@ function Manifest() {
                     //use flex or none
                     showStars={['flex', 'flex', 'flex', 'flex', 'flex', 'flex']}
 
-                    potentialInfo={['DP Cost -1', 'Improves Talent 1', 'ATk +25', 'Improves Talent 2', 'DP Cost -1']}
+                    potentialInfo={['DP Cost -1', 'Improves Talent 1', 'ATK +25', 'Improves Talent 2', 'DP Cost -1']}
                     trustInfo={['HP +360', 'ATK +30']}
 
                     // hp, def, atk, res, redeploy, block, cost, aspd
@@ -161,8 +161,8 @@ function Manifest() {
                          </p>,
                     ]}
 
-                    bskill1Title={<p>Self-Absorbed</p>}
-                    bskill2Title={<p>Business is Business</p>}
+                    bskill1Title={'Self-Absorbed'}
+                    bskill2Title={'Business is Business'}
 
                     bskill1img='bskills/bskill_ctrl_cost.png'
                     bskill2img='bskills/bskill_ctrl_lonely.png'
@@ -225,7 +225,7 @@ function Manifest() {
                     skillNames={[
                          'Unvoiced Anger',
                          'Unresolved Sorrow',
-                         'UNbrilliant Glory'
+                         'Unbrilliant Glory'
                     ]}
                     skillImages={[
                          'skills/skill_icon_skchr_mlynar_1.png',
@@ -1456,7 +1456,7 @@ function Manifest() {
                     ]}
                />
 
-          </OpNav>
+          </OperatorNav>
      )
 }
 

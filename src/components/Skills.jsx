@@ -5,10 +5,6 @@ import Timersvg from './svg/Timersvg';
 
 function skills(props) {
 
-     const displayer = {
-          display: props.display,
-     }
-
      // run on first load
      useEffect(() => {
           document.getElementById('skill1Button').classList.add('active-button');
@@ -157,50 +153,56 @@ function skills(props) {
 
 
      return (
-          <div style={displayer} className="skillsContainer">
-               <div className="head">
-                    <div className="head-content">
+          <div style={{ display: props.display }} className="skills-container">
+               <div className="skills-head-wrapper">
+                    <div className="skills-head-content">
                          <img src={displaySkillImage} />
-                         <div className="head-text">
+                         <div>
                               <h1>{displaySkillName}</h1>
-                              <div>
-                                   <p>{displaySkillRecoveryType}</p>
-                                   <p>{displaySkillTriggerType}</p>
-                              </div>
+                              <ul>
+                                   <li><p>{displaySkillRecoveryType}</p></li>
+                                   <li><p>{displaySkillTriggerType}</p></li>
+                              </ul>
                          </div>
                     </div>
-                    <div className="selector-buttons">
+                    <div className="skills-head-buttons">
                          <h2 id="skill1Button" onClick={() => handleChangeSkill(0)}>I</h2>
                          <h2 id="skill2Button" onClick={() => handleChangeSkill(1)}>II</h2>
                          <h2 id="skill3Button" onClick={() => handleChangeSkill(2)}>III</h2>
                     </div>
                </div>
                <hr />
-               <div className="slider-container">
-                    <ul className="slider-text">
-                         <li>Level</li>
-                         <li id="level-displayer">{displayCurrentLevel}</li>
-                    </ul>
+               <div className="skills-rangeinput">
+                    <p>{displayCurrentLevel}</p>
                     <input id="skill-range" type="range" min="1" max={props.maxInputRange} value={rangeValue} onChange={handleRangeChange} />
                </div>
                <hr />
-               <div className="content-container">
-                    <div className="skill-info">
+               <div className="skills-content">
+                    <div className="skills-content-info">
                          <ul>
                               <li>
-                                   <Rtrianglesvg/>
-                                   <p>Initial Sp</p>
-                                   <p className="skill-info-displayer">{displayInitialSp}</p>
+                                   <div>
+                                        <Rtrianglesvg />
+                                        <p>{displayInitialSp}</p>
+                                   </div>
+
+                                   <p className='stat-label'>Initial Sp</p>
                               </li>
                               <li>
-                                   <Boltsvg/>
-                                   <p>Sp Cost</p>
-                                   <p className="skill-info-displayer">{displaySpCost}</p>
+                                   <div>
+                                        <Boltsvg />
+                                        <p>{displaySpCost}</p>
+                                   </div>
+
+                                   <p className='stat-label'>Sp Cost</p>
                               </li>
                               <li>
-                                   <Timersvg/>
-                                   <p>Duration</p>
-                                   <p className="skill-info-displayer">{displayDuration}s</p>
+                                   <div>
+                                        <Timersvg />
+                                        <p>{displayDuration}s</p>
+                                   </div>
+
+                                   <p className='stat-label'>Duration</p>
                               </li>
                          </ul>
                          {displayContent}
@@ -208,7 +210,7 @@ function skills(props) {
                               {displayAddendum}
                          </div>
                     </div>
-                    <div className="range-container" style={{ display: rangeVisibility }}>
+                    <div className="skills-range-wrapper" style={{ display: rangeVisibility }}>
                          <p>Range</p>
                          {displaySkillRange}
                     </div>

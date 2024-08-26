@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import OpNav from '../components/OpNav.jsx';
+import OperatorNav from '../components/OperatorNav.jsx';
 
 import Overview from '../components/Overview.jsx';
 import Skills from '../components/Skills.jsx';
@@ -27,8 +27,8 @@ function Manifest() {
      const showTab = (tab) => {
           console.log(tab)
 
-          setOverviewDisplay(tab === 'overview' ? 'grid' : 'none');
-          setSkillsDisplay(tab === 'skills' ? 'grid' : 'none');
+          setOverviewDisplay(tab === 'overview' ? 'flex' : 'none');
+          setSkillsDisplay(tab === 'skills' ? 'flex' : 'none');
           setModulesDisplay(tab === 'modules' ? 'grid' : 'none');
           setSummonDisplay(tab === 'summon' ? 'grid' : 'none');
           setFilesDisplay(tab === 'files' ? 'grid' : 'none');
@@ -38,7 +38,7 @@ function Manifest() {
           setTabTitle(tab.toUpperCase());
      }
      return (
-          <OpNav
+          <OperatorNav
                title={tabTitle}
                children=''
                operatorName="Kal'tsit"
@@ -48,8 +48,8 @@ function Manifest() {
                showTabs={['block', 'block', 'block', 'block', 'block', 'block', 'block']}
                childClick={showTab}
 
-               darkAccentBg='#2f3622'
-               darkAccentColor='#93d160'
+               accentShadow='#2f3622'
+               accentColor='#93d160'
           >
 
                <Overview display={overviewDisplay}
@@ -137,8 +137,8 @@ function Manifest() {
                          <p>When Mon3tr is defeated (excluding retreat), all enemies in the surrounding 8 tiles are Stunned for 3.5 <span className="blueText">(+0.5)</span> seconds and receive 1400 <span className="blueText">(+200)</span> True damage</p>,
                     ]}
 
-                    bskill1Title={<p>Unknown Technology</p>}
-                    bskill2Title={<p>Highest Authority</p>}
+                    bskill1Title={'Unknown Technology'}
+                    bskill2Title={'Highest Authority'}
 
                     bskill1img='bskills/bskill_ws_p5.png'
                     bskill2img='bskills/bskill_ctrl_p_spd.png'
@@ -1138,7 +1138,7 @@ function Manifest() {
 
                     eliteVisibility={['flex', 'flex']}
                     eliteResources={[
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/GOLD.png')"
@@ -1160,7 +1160,7 @@ function Manifest() {
                                    itemAmount='x5'
                                    itemDesc='Polyketon' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/GOLD.png')"
@@ -1200,14 +1200,14 @@ function Manifest() {
                     ]}
 
                     skillResources={[
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-2-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL1.png')"
                                    itemAmount='x5'
                                    itemDesc='Skill Summary 1' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-2-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL1.png')"
@@ -1224,7 +1224,7 @@ function Manifest() {
                                    itemAmount='x4'
                                    itemDesc='Ester' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-3-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL2.png')"
@@ -1236,7 +1236,7 @@ function Manifest() {
                                    itemAmount='x7'
                                    itemDesc='Orirock Cube' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-3-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL2.png')"
@@ -1253,7 +1253,7 @@ function Manifest() {
                                    itemAmount='x4'
                                    itemDesc='Polyketon' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-3-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL2.png')"
@@ -1265,7 +1265,7 @@ function Manifest() {
                                    itemAmount='x6'
                                    itemDesc='Oriron Cluster' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL3.png')"
@@ -1293,7 +1293,7 @@ function Manifest() {
                     ]}
 
                     skill1SpecResources={[
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL3.png')"
@@ -1310,7 +1310,7 @@ function Manifest() {
                                    itemAmount='x4'
                                    itemDesc='Coagulating Gel' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL3.png')"
@@ -1327,7 +1327,7 @@ function Manifest() {
                                    itemAmount='x9'
                                    itemDesc='White Horse Kohl' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL3.png')"
@@ -1347,7 +1347,7 @@ function Manifest() {
                     ]}
 
                     skill2SpecResources={[
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL3.png')"
@@ -1364,7 +1364,7 @@ function Manifest() {
                                    itemAmount='x4'
                                    itemDesc='Orirock Cluster' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL3.png')"
@@ -1381,7 +1381,7 @@ function Manifest() {
                                    itemAmount='x9'
                                    itemDesc='Manganese Trihydrate' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL3.png')"
@@ -1401,7 +1401,7 @@ function Manifest() {
                     ]}
 
                     skill3SpecResources={[
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL3.png')"
@@ -1418,7 +1418,7 @@ function Manifest() {
                                    itemAmount='x8'
                                    itemDesc='Aketon' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL3.png')"
@@ -1435,7 +1435,7 @@ function Manifest() {
                                    itemAmount='x8'
                                    itemDesc='Polymerized Gel' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-4-bg.png')"
                                    itemUrl="url('icons/MTL_SKILL3.png')"
@@ -1499,7 +1499,7 @@ function Manifest() {
                          'Raise Kal\'tsit\'s trust to 100'
                     ]}
                     module1Resources={[
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-5-bg.png')"
                                    itemUrl="url('icons/mod_update_token_3.png')"
@@ -1521,7 +1521,7 @@ function Manifest() {
                                    itemAmount=''
                                    itemDesc='' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-5-bg.png')"
                                    itemUrl="url('icons/mod_update_token_3.png')"
@@ -1543,7 +1543,7 @@ function Manifest() {
                                    itemAmount='x100,000'
                                    itemDesc='LMD' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-5-bg.png')"
                                    itemUrl="url('icons/mod_update_token_3.png')"
@@ -1580,7 +1580,7 @@ function Manifest() {
                     ]}
 
                     module2Resources={[
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-5-bg.png')"
                                    itemUrl="url('icons/mod_update_token_3.png')"
@@ -1602,7 +1602,7 @@ function Manifest() {
                                    itemAmount=''
                                    itemDesc='' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-5-bg.png')"
                                    itemUrl="url('icons/mod_update_token_3.png')"
@@ -1624,7 +1624,7 @@ function Manifest() {
                                    itemAmount='x100,000'
                                    itemDesc='LMD' />
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                               <ItemContainer
                                    itemBgUrl="url('icons/item-5-bg.png')"
                                    itemUrl="url('icons/mod_update_token_3.png')"
@@ -1662,11 +1662,11 @@ function Manifest() {
                     ]}
 
                     module3Resources={[
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>
                     ]}
 
@@ -1684,11 +1684,11 @@ function Manifest() {
                     ]}
 
                     module4Resources={[
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>
                     ]}
 
@@ -1705,16 +1705,16 @@ function Manifest() {
                     ]}
 
                     module5Resources={[
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>,
-                         <div className="item-display-container">
+                         <div className="item-display-wrapper">
                          </div>
                     ]}
                />
 
-          </OpNav>
+          </OperatorNav>
      )
 }
 

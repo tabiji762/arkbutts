@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import OpNav from '../components/OpNav.jsx';
+import OperatorNav from '../components/OperatorNav.jsx';
 
 import Overview from '../components/Overview.jsx';
 import Skills from '../components/Skills.jsx';
@@ -27,8 +27,8 @@ function Manifest() {
      const showTab = (tab) => {
           console.log(tab)
 
-          setOverviewDisplay(tab === 'overview' ? 'grid' : 'none');
-          setSkillsDisplay(tab === 'skills' ? 'grid' : 'none');
+          setOverviewDisplay(tab === 'overview' ? 'flex' : 'none');
+          setSkillsDisplay(tab === 'skills' ? 'flex' : 'none');
           setModulesDisplay(tab === 'modules' ? 'grid' : 'none');
           setSummonDisplay(tab === 'summon' ? 'grid' : 'none');
           setFilesDisplay(tab === 'files' ? 'grid' : 'none');
@@ -38,7 +38,7 @@ function Manifest() {
           setTabTitle(tab.toUpperCase());
      }
      return (
-          <OpNav
+          <OperatorNav
                title={tabTitle}
                children=''
                operatorName="Amiya"
@@ -48,8 +48,8 @@ function Manifest() {
                showTabs={['block', 'block', 'block', 'none', 'block', 'block', 'block']}
                childClick={showTab}
 
-               darkAccentBg='#362224'
-               darkAccentColor='#de283d'
+               accentShadow='#362224'
+               accentColor='#de283d'
           >
 
                <Overview display={overviewDisplay}
@@ -137,8 +137,8 @@ function Manifest() {
                          <p>Restores 3 <span className='blueText'>(+1)</span> extra Skill Points when attacking an enemy and 10 <span className='blueText'>(+2)</span> extra Skill Points when killing an enemy</p>,
                     ]}
 
-                    bskill1Title={<p>Agreement</p>}
-                    bskill2Title={<p>Violin Solo</p>}
+                    bskill1Title={'Agreement'}
+                    bskill2Title={'Violin Solo'}
 
                     bskill1img='bskills/bskill_ctrl_t_spd.png'
                     bskill2img='bskills/bskill_dorm_all2.png'
@@ -1410,7 +1410,7 @@ function Manifest() {
                     ]}
                />
 
-          </OpNav>
+          </OperatorNav>
      )
 }
 
