@@ -48,8 +48,8 @@ function Manifest() {
                showTabs={['block', 'block', 'block', 'block', 'block', 'block', 'block']}
                childClick={showTab}
 
-               accentShadow='#2f3622'
-               accentColor='#93d160'
+               accentShadow='rgba(140, 160, 70, 0.3)'
+               accentColor='rgb(140, 160, 70)'
           >
 
                <Overview display={overviewDisplay}
