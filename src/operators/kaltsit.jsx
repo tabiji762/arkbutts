@@ -112,7 +112,7 @@ function Manifest() {
                     talent1Title={<h2>Mon3tr</h2>}
                     talent2Title={<h2>Non-Damaging Restructuring</h2>}
 
-                    talentWrapperVisibility={['none', 'flex', 'flex']}
+                    talentWrapperVisibility={['flex', 'flex', 'flex']}
                     talent1Visibility={['flex', 'flex', 'flex']}
                     talent2Visibility={['none', 'none', 'flex']}
 
