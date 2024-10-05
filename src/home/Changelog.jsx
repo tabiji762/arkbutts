@@ -19,7 +19,7 @@ export default function Changelog() {
                     <p>Redesigned website, trying to use shadows instead of hard borders.</p>
                </div>
                <div>
-                    <h3>tba</h3>
+                    <h3>10/5/24</h3>
                     <p>added changelogs page and operators button to main page.</p>
                     <p>Fixed star filters not working when used together.</p>
                     <p>Changed BrowserRouter to to HashRouter.</p>
