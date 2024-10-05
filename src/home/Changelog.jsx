@@ -22,7 +22,7 @@ export default function Changelog() {
                     <h3>10/5/24</h3>
                     <p>added changelogs page and operators button to main page.</p>
                     <p>Fixed star filters not working when used together.</p>
-                    <p>Changed BrowserRouter to to HashRouter.</p>
+                    <p>Changed BrowserRouter to HashRouter.</p>
                     <p>Added the following operators:</p>
                     <ul>
                          <li>- Kroos</li>
