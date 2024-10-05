@@ -216,8 +216,8 @@ return (
                     <div className="overview-pottrust-wrapper">
                          <p id="trustButton" onClick={() => toggleTrust()} className='overview-pottrust-button'>Trust</p>
                          <ul className="overview-pottrust-stats">
-                              <li>{props.trustInfo[0]}</li>
-                              <li>{props.trustInfo[1]}</li>
+                              <li style={{display: props.trustInfoVisibility[0]}}>{props.trustInfo[0]}</li>
+                              <li style={{display: props.trustInfoVisibility[1]}}>{props.trustInfo[1]}</li>
                          </ul>
                     </div>
                </div>

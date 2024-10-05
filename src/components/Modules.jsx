@@ -186,7 +186,6 @@ function Modules(props) {
                     <div className='modules-trait-wrapper'>
                          <div className='modules-trait-content'>
                               <h2>Trait</h2>
-                              <p>{props.ogTrait}</p>
                               {displayTraitContent}
                          </div>
                          <div className='modules-trait-range-wrapper' style={displayRangeContainer}>

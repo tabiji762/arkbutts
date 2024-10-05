@@ -64,6 +64,7 @@ function Manifest() {
                     showStars={['flex', 'flex', 'flex', 'flex', 'flex', 'flex']}
 
                     potentialInfo={['DP Cost -1', 'Redeploy Time -4s', 'ATK +25', 'Improves Talent 2', 'DP Cost -1']}
+                    trustInfoVisibility={['block', 'block']}
                     trustInfo={['HP +400', 'DEF +40']}
 
                     // hp, def, atk, res, redeploy, block, cost, aspd
@@ -323,9 +324,14 @@ function Manifest() {
                          '',
                     ]}
 
-                    // trait and talent stuff
-                    ogTrait='Restores the HP of Allies'
-
+                    traitContent={[
+                         <p>Restores the HP of Allies <br/> When healing allied units with less than 50% HP, increases heal amount by <span className='blueText'>15%</span></p>,
+                         <p>Restores the HP of Allies <br/> Healing increased by <span className='blueText'>15%</span> when healing a ground unit </p>,
+                         '',
+                         '',
+                         ''
+                    ]}
+                    
                     // in order of the talent that is modified by the module 
                     // im banking on the hope that modules only change 1 talent and the trait stays constant through the 3 stages
                     talentNames={[
@@ -336,13 +342,6 @@ function Manifest() {
                          ''
                     ]}
 
-                    traitContent={[
-                         <p>When healing allied units with less than 50% HP, increases heal amount by <span className='blueText'>15%</span></p>,
-                         <p>Healing increased by <span className='blueText'>15%</span> when healing a ground unit </p>,
-                         '',
-                         '',
-                         ''
-                    ]}
 
                     // use none or block
                     moduleRangeVisibility={['none', 'none', 'none', 'none', 'none']}

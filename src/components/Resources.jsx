@@ -56,7 +56,7 @@ function resources(props) {
                          {props.skillResources[5]}
                     </li>
                </ul>
-               <hr style={{ display: props.skillVisibility }} />
+               <hr style={{ display: props.skillSpecVisibility[0] }} />
 
                <p className='sections-navigator' style={{ display: props.skillSpecVisibility[0] }}>Skill | Specialization Level | Requirements | Resources</p>
                <ul className='skill-spec-resource-container' >

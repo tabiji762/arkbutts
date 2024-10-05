@@ -64,6 +64,7 @@ function Manifest() {
                     showStars={['flex', 'flex', 'flex', 'flex', 'flex', 'none']}
 
                     potentialInfo={['Max HP +200', 'DP Cost -1', 'ATK +30', 'DP Cost -1', 'Improves Talent']}
+                    trustInfoVisibility={['block', 'block']}
                     trustInfo={['HP +200', 'ATK +70']}
 
                     // hp, def, atk, res, redeploy, block, cost, aspd
@@ -326,9 +327,15 @@ function Manifest() {
                          '',
                     ]}
 
-                    // trait and talent stuff
-                    ogTrait='Deals Arts Damage'
-
+                    // 1 trait for each module
+                    traitContent={[
+                         <p>Deals Arts Damage <br/> Gain <span className='blueText'>1 SP</span> when normal attacks hit an elite or leader enemy. </p>,
+                         '',
+                         '',
+                         '',
+                         ''
+                    ]}
+                    
                     // in order of the talent that is modified by the module 
                     // im banking on the hope that modules only change 1 talent and the trait stays constant through the 3 stages
                     // 1 talent for each module
@@ -340,14 +347,6 @@ function Manifest() {
                          ''
                     ]}
 
-                    // 1 trait for each module
-                    traitContent={[
-                         <p>Gain <span className='blueText'>1 SP</span> when normal attacks hit an elite or leader enemy. </p>,
-                         '',
-                         '',
-                         '',
-                         ''
-                    ]}
 
                     // use none or block
                     moduleRangeVisibility={['none', 'none', 'none', 'none', 'none']}
@@ -948,7 +947,7 @@ function Manifest() {
                                    itemAmount='x10'
                                    itemDesc='Orirock Concentration' />
                               <ItemContainer
-                                   itemBgUrl="url('icons/item-4-bg.png')"
+                                   itemBgUrl="url('icons/item-3-bg.png')"
                                    itemUrl="url('icons/MTL_SL_ALCOHOL1.png')"
                                    itemAmount='x10'
                                    itemDesc='Loxic Kohl' />
@@ -1050,7 +1049,7 @@ function Manifest() {
                     skillSpecVisibility={[
                          'flex',
                          'flex',
-                         'flex'
+                         'none'
                     ]}
 
                     skill1SpecResources={[

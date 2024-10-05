@@ -1,4 +1,4 @@
-export default function Boltsvg() {
+export default function Arrowsvg() {
      return (
           <svg
                width="50px"

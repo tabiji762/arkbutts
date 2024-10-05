@@ -64,6 +64,7 @@ function Manifest() {
                     showStars={['flex', 'flex', 'flex', 'flex', 'flex', 'flex']}
 
                     potentialInfo={['DP Cost -1', 'Improves Talent 1', 'ATK +25', 'Improves Talent 2', 'DP Cost -1']}
+                    trustInfoVisibility={['block', 'block']}
                     trustInfo={['HP +360', 'ATK +30']}
 
                     // hp, def, atk, res, redeploy, block, cost, aspd

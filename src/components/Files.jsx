@@ -20,6 +20,10 @@ function Files(props) {
           display: dialogueVisibility,
      }
 
+     useEffect(() => {
+          document.getElementById('filesbutton1').classList.add('active-button');
+     }, [])
+
      const [basicInfoHeight, setBasicInfoHeight] = useState(0)
      const [physicalExamHeight, setPhysicalExamHeight] = useState(0)
      const [profileHeight, setProfileHeight] = useState(0)
@@ -32,9 +36,6 @@ function Files(props) {
      const [classConversionRecord1Height, setclassConversionRecord1Height] = useState(0)
      const [classConversionRecord2Height, setclassConversionRecord2Height] = useState(0)
 
-     useEffect(() => {
-          document.getElementById('filesbutton1').classList.add('active-button');
-     }, [])
 
      // these take care of the arrow rotation
      useEffect(() => {

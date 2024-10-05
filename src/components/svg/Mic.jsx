@@ -1,4 +1,4 @@
-export default function Boltsvg() {
+export default function Micsvg() {
      return (
           <svg 
                width="50px"

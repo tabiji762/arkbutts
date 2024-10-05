@@ -143,7 +143,7 @@ export default function OperatorNav(props) {
                               </div>
                          </div>
                          <div className="sidebar-tabs">
-                              <Link to='/arkbutts/'><p>BACK</p></Link>
+                              <Link to='/'><p>BACK</p></Link>
                               <p onClick={() => sendTab('overview')} id="overviewTab" style={{ display: props.showTabs[0] }}>Overview</p>
                               <p onClick={() => sendTab('skills')} id="skillsTab" style={{ display: props.showTabs[1] }}>Skills</p>
                               <p onClick={() => sendTab('modules')} id="modulesTab" style={{ display: props.showTabs[2] }}>Modules</p>

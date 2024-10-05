@@ -24,6 +24,7 @@ function Operators(props) {
      const handleFilterChange = (selectedSubclass) => {
           if (selectedFilters.includes(selectedSubclass)) {
 
+               //removes filter if it is already in the filter list
                let excludeFilter = selectedFilters.filter(filter => filter !== selectedSubclass)
                setSelectedFilters(excludeFilter);
 
@@ -31,6 +32,8 @@ function Operators(props) {
                setBackendFilters(excludeFilter);
           }
           else {
+
+               //adds filter if it isnt in the filter list
                setSelectedFilters([...selectedFilters, selectedSubclass]);
                setBackendFilters([...backendFilters, selectedSubclass])
           };
@@ -46,9 +49,9 @@ function Operators(props) {
      // makes the filtered list
      const filterItems = () => {
           if (selectedFilters.length > 0) {
-               // selectedFilters.map takes care of multiple subclass filters
+               // selectedFilters.map runs the filtering through each active subclass filter
                // for each filter, temp variable finds the entries with the corresponding classes
-               // flat() joins the arrays together in tempItems variable
+               // flat() joins the arrays together in tempData variable
                let tempData = selectedFilters.map((selectedSubclass) => {
                     let temp = data.filter((entry) => entry.subclass === selectedSubclass);
                     return temp;
@@ -75,13 +78,23 @@ function Operators(props) {
           else {
                let tempData = orderedDataList;
                if (starFilter.length > 0) {
-                    starFilter.forEach(starvalue => {
-                         tempData = tempData.filter(matchStar => matchStar.stars === starvalue)
+                    tempData = starFilter.map((starvalue) => {
+                         let temp = orderedDataList.filter(matchStar => matchStar.stars === starvalue);
+                         return temp
                     });
                }
+               tempData = tempData.flat();
                if (limitedFilter === true) {
                     tempData = tempData.filter(matchLimited => matchLimited.limited === true);
                }
+               tempData = tempData.sort((a, b) => {
+                    if (a.mainClass < b.mainClass) return -1;
+                    if (a.mainClass > b.mainClass) return 1;
+                    if (a.stars < b.stars) return 1;
+                    if (a.stars > b.stars) return -1;
+                    if (a.name < b.name) return -1;
+                    if (a.name > b.name) return 1;
+               });
                setFilteredItems(tempData);
           }
      }
@@ -137,6 +150,7 @@ function Operators(props) {
 
      useEffect(() => {
           filterItems()
+          console.log(starFilter)
      }, [starFilter, limitedFilter])
 
      // true = open, false = closed

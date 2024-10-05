@@ -9,12 +9,18 @@
      background-color: var(--bgcolor1);
      box-shadow: 0 2px 10px var(--shadow);
 }
-.main-nav > a > svg{
-     width: 40px;
-     padding: 5px;
-     aspect-ratio: 1;
-     display: block;
-     fill: var(--svgcolor);
+.main-nav > div{
+     display: flex;
+     align-items: center;
+
+     & svg{
+          width: 40px;
+          padding: 5px;
+          aspect-ratio: 1;
+          display: block;
+          fill: var(--svgcolor);
+          cursor: pointer;
+     }
 }
 
 /* operator container */
@@ -164,4 +170,32 @@
      background-size: contain;
      background-position: center;
      background-repeat: no-repeat;
+}
+
+
+.changelog-page-container{
+     display: flex;
+     flex-direction: column;
+     gap: 30px;
+     padding: 50px 200px;
+
+     & div{
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          & *{
+               color: var(--subtextcolor);
+          }
+
+          & h3{
+               color: var(--textcolor);
+               margin-bottom: 5px;
+          }
+     }
+}
+@media (max-width: 1200px){
+     .changelog-page-container{
+          padding: 50px 20px;
+     }
 }
